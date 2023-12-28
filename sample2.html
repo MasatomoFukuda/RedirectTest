@@ -33,7 +33,11 @@
             var userAgent = navigator.userAgent.toLowerCase();
             // iPhone端末ならアプリを開くかApp Storeを開く。
             if (userAgent.search(/iphone|ipad|ipod/) > -1) {
-                window.location.href = IOS_SCHEME;
+                try {
+                    window.location.href = IOS_SCHEME;
+                } catch (e) {
+                    location.href = PC_SITE;
+                }
                 setTimeout(function() {
                     location.href = PC_SITE;
                 }, 500);
