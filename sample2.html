@@ -34,7 +34,7 @@
             // iPhone端末ならアプリを開くかApp Storeを開く。
             if (userAgent.search(/iphone|ipad|ipod/) > -1) {
                 try {
-                    window.location.href = IOS_SCHEME;
+                    location.assign = IOS_SCHEME;
                 } catch (e) {
                     location.href = PC_SITE;
                 }
